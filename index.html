@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Gleffs Bar</title>
+</head>
+
+<body>
+  <header>
+    <h1>Gleffs Bar</h1>
+    <h3>Mesa 10</h3>
+  </header>
+  <main>
+    <div class="title">
+      <h2>Adicionar Produtos</h2>
+      <span > Favor incluir taxa de serviço de 10% <span id="span">NÃO OBRIGATÓRIO</span></span>
+    </div>
+    <div class="card">
+      <div class="lineInput">
+        <label>Produto</label>
+        <input type="text" id="produto" placeholder="Nome do produto">
+      </div>
+
+      <div class="lineInput">
+        <label>Preço</label>
+        <input type="number" id="preco" placeholder="Valor do produto">
+      </div>
+
+      <button onclick="produto.salvar()">Adicionar</button>
+      <button onclick="produto.cancelar()">Limpar</button>
+    </div>
+    <div class="content">
+      <table class="tablePrincipal" border="" 1>
+        <thead>
+          <th class="center">Item</th>
+          <th id="tt" class="center">Produto</th>
+          <th class="center" >Valor</th>
+          <th class="center">Ações</th>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <table>
+    <p id="txtf"></p>
+    <thead>
+    </thead>
+    <tbody id="tbo">
+    </tbody>
+    
+  </table>
+  <p id="totalPagar"></p>
+  <div class="bnt">
+    <button id="bnt" onclick="produto.fechar()">Fechar conta</button>
+  </div>
+  <div id="res">
+  </div>
+  <script src="./js/script.js"></script>
+</body>
+</html>
