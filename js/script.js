@@ -82,7 +82,7 @@ class Produto {
         for (let i = 0; i < produto.arrayProdutos.length; i++) {
           soma += parseInt(produto.arrayProdutos[i].preco1);
           txtf.innerHTML = "Produtos consumidos :";
-          totalPagar.innerText = `Valor Total: ${new Intl.NumberFormat("pt-BR",{style: "currency",currency: "BRL",}).format(soma)}`;
+          // totalPagar.innerText = `Valor Total: ${new Intl.NumberFormat("pt-BR",{style: "currency",currency: "BRL",}).format(soma)} + 10% (taxa serviço) = ${new Intl.NumberFormat("pt-BR",{style: "currency",currency: "BRL",}).format(soma + (soma * 10 / 100))} `;
           let tr = tbo.insertRow();
           let td_produto = tr.insertCell();
           let td_valor = tr.insertCell();
@@ -101,9 +101,14 @@ class Produto {
           nomePessoas.push(prompt('Qual nome delas ?' )) 
         }
         alert("Obrigado pela preferencia...");
-        alert(`O Valor dividido em ${nomePessoas.length} pessoas é : ${new Intl.NumberFormat("pt-BR",{style: "currency",currency: "BRL",}).format(soma / nomePessoas.length)}`)
-      } else if (simOuNao == 'N' || simOuNao == 'n') {
+        alert(`O Valor Total ${new Intl.NumberFormat("pt-BR",{style: "currency",currency: "BRL",}).format(soma)} dividido em ${nomePessoas.length} pessoas é : ${new Intl.NumberFormat("pt-BR",{style: "currency",currency: "BRL",}).format(soma / nomePessoas.length)} + 10% (taxa serviço) = ${new Intl.NumberFormat("pt-BR",{style: "currency",currency: "BRL",}).format(soma / nomePessoas.length + (soma / nomePessoas.length) * 10 / 100)}`)
+
+        totalPagar.innerText = `Valor Total: ${new Intl.NumberFormat("pt-BR",{style: "currency",currency: "BRL",}).format(soma)}`
+      } 
+      
+      else if (simOuNao == 'N' || simOuNao == 'n') {
         prompt("Dinheiro ou Cartão:");
+        totalPagar.innerText = `Valor Total: ${new Intl.NumberFormat("pt-BR",{style: "currency",currency: "BRL",}).format(soma)} + 10% (taxa serviço) = ${new Intl.NumberFormat("pt-BR",{style: "currency",currency: "BRL",}).format(soma + (soma * 10 / 100))} `;
         
       } else {
         alert("Opção Invalida!");
